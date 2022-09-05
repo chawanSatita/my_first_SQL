@@ -1,0 +1,32 @@
+select
+    R.receiptid,
+    S.name as soup_name,
+    R.soup_amount,
+    M.name as maindish_name,
+    R.dish_amount,
+    C.name as combo_name,
+    R.combo_amount,
+    S1.name as staff_name
+from 
+    Receipt R 
+left join Soup S on S.soupid = R.soupid 
+left join Main_dish M on R.dishid = M.dishid
+left join Combo C on R.comboid = c.comboid
+left join Staff S1 on S1.staffid = R.staffid;
+
+
+/*select
+    R.receiptid,
+    S.name as soup_name ,
+    R.soup_amount,
+    M.name as maindish_name,
+    R.dish_amount,
+    C.name AS combo_name,
+    R.combo_amount,
+    S1.name as staff_name
+from 
+    Receipt R 
+left join Soup S on S.soupid = R.soupid 
+left join Main_dish M on R.dishid = M.dishid
+left join Combo C on R.comboid = c.comboid
+left join Staff S1 on S1.staffid = R.staffid;*/
